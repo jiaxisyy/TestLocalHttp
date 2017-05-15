@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="test_read_type">
+        <item>get_bit_x</item>
+        <item>get_bit_y</item>
+        <item>get_bit_s</item>
+        <item>get_bit_m</item>
+        <item>get_bit_t</item>
+        <item>get_bit_c</item>
+        <item>get_bit_sm</item>
+        <item>get_word_d</item>
+        <item>get_word_r</item>
+        <item>get_word_sd</item>
+        <item>get_word_z</item>
+        <item>get_word_t</item>
+        <item>get_dword_d</item>
+        <item>get_dword_r</item>
+        <item>get_dword_sd</item>
+        <item>get_dword_z</item>
+        <item>get_dword_c</item>
+        <item>get_real_d</item>
+        <item>get_real_r</item>
+
+
+    </string-array>
+    <string-array name="test_write_type">
+        <item>set_bit_y</item>
+        <item>set_bit_m</item>
+        <item>set_bit_s</item>
+        <item>set_bit_sm</item>
+        <item>set_word_d</item>
+        <item>set_word_r</item>
+        <item>set_word_sd</item>
+        <item>set_word_z</item>
+        <item>set_dword_d</item>
+        <item>set_dword_r</item>
+        <item>set_dword_sd</item>
+        <item>set_dword_z</item>
+        <item>set_real_d</item>
+        <item>set_real_r</item>
+
+
+    </string-array>
+
+
+</resources>

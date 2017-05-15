@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_test_readAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="读地址"
+            android:inputType="number"
+            android:singleLine="true"/>
+
+        <Spinner
+            android:id="@+id/sp_test_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/test_read_type">
+        </Spinner>
+
+        <Button
+            android:id="@+id/btn_test_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读"/>
+
+        <TextView
+            android:id="@+id/tv_test_read"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="读取内容展示"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_test_writeAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="写地址"
+            android:inputType="number"
+            android:singleLine="true"/>
+
+        <Spinner
+            android:id="@+id/sp_test_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/test_write_type">
+        </Spinner>
+
+        <EditText
+            android:id="@+id/et_test_write_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="输入内容"
+            />
+
+
+        <Button
+            android:id="@+id/btn_test_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写"/>
+
+        <TextView
+            android:id="@+id/tv_test_write"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="写内容反馈"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
