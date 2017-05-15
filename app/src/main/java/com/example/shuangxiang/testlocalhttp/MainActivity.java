@@ -12,8 +12,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.math.BigInteger;
-
 public class MainActivity extends AppCompatActivity {
 
     private EditText ettestreadAddress;
@@ -71,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        byte[] bytes = Util.sendPost(writeUrl, info.getBytes());
+                        byte[] bytes1 = strToHexbytes(info);
+                        byte[] bytes = Util.sendPost(writeUrl, bytes1);
                         StringBuffer stringBuffer = new StringBuffer();
                         Log.d("TEST", bytes.length + "");
                         for (int i = bytes.length - 1; i >= 0; i--) {
@@ -164,32 +163,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static String binary(byte[] bytes, int radix) {
-        return new BigInteger(1, bytes).toString(radix);// 这里的1代表正数
+    private byte[] strToHexbytes(String inputStr) {
+        byte[] result = new byte[inputStr.length() / 2];
+        for (int i = 0; i < inputStr.length() / 2; ++i)
+            result[i] = (byte) (Integer.parseInt(inputStr.substring(i * 2, i * 2 + 2), 16) & 0xff);
+        return result;
     }
 
-    public static String byte2HexStr(byte[] b) {
-        String stmp = "";
-        StringBuilder sb = new StringBuilder("");
-        for (int n = 0; n < b.length; n++) {
-            stmp = Integer.toHexString(b[n] & 0xFF);
-            sb.append((stmp.length() == 1) ? "0" + stmp : stmp);
-            sb.append(" ");
-        }
-        return sb.toString().toUpperCase().trim();
-    }
-
-    public static String hexStr2Str(String hexStr) {
-        String str = "0123456789ABCDEF";
-        char[] hexs = hexStr.toCharArray();
-        byte[] bytes = new byte[hexStr.length() / 2];
-        int n;
-
-        for (int i = 0; i < bytes.length; i++) {
-            n = str.indexOf(hexs[2 * i]) * 16;
-            n += str.indexOf(hexs[2 * i + 1]);
-            bytes[i] = (byte) (n & 0xff);
-        }
-        return new String(bytes);
-    }
 }
